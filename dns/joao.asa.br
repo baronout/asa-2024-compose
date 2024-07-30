@@ -10,6 +10,6 @@ $TTL	604800
 			 604800 )	; Negative Cache TTL
 ;
 @   IN  NS  ns.joao.asa.br.
-@   IN  A   10.0.0.126
-ns  IN  A   10.0.0.126
+@   IN  A   10.25.1.212
+ns  IN  A   10.25.1.212
 www IN  CNAME   ns

@@ -1,0 +1,34 @@
+services:
+  www:
+    build:
+      context: ./www
+      dockerfile: Dockerfile
+    image: www
+    container_name: www
+    networks: 
+      - asa-network
+  www2:
+    build:
+      context: ./www2
+      dockerfile: Dockerfile
+    image: www2
+    container_name: www2
+    networks:
+      - asa-network
+  proxy:
+    build:
+      context: ./proxy
+      dockerfile: Dockerfile
+    image: proxy
+    container_name: proxy
+    ports:
+    - "8080:80"
+    depends_on:
+      - www
+      - www2
+    networks:
+    - asa-network
+
+networks:
+  asa-network:
+    driver: bridge
